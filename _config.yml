@@ -6,7 +6,7 @@ title:               Mohyerolo
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://mohyerolo.github.io
+url:                 https://garamlog.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
@@ -22,7 +22,7 @@ description:         >
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              mohyerolo
+  name:              garam
   email:             garam2101@naver.com
 
 # Fallback image and color
@@ -48,7 +48,7 @@ google_analytics:    UA-137374202-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
 disqus: True
-disqus_shortname:    mohyerolo
+disqus_shortname:    garam
 
 # This text will appear in the footer of every page. Markdown enabled.
 copyright:           '&copy; 2021.05. by Mohyerolo'

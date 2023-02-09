@@ -2,7 +2,7 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `qwtel` to your shortname (used in the front matter to set a page's author, e.g. `author: qwtel`).
 theorydb:
-  name:              mohyerolo
+  name:              garam
   email:             garam2101@naver.com
 
   # Used at the bottom of each page and at the top of the `about` layout
@@ -58,7 +58,7 @@ theorydb:
     # stumbleupon:     <username>
     # paypal:          <username>
     email:           mailto:garam2101@naver.com
-    rss:             https://mohyerolo.github.io/feed.xml
+    rss:             https://garamlog.github.io/feed.xml
 
 # Another author
 mdo:
