@@ -19,8 +19,7 @@ jwt에 대해서 백엔드 코드를 공부하는 것이 아닌 이론을 다시
 <https://dkswnkk.tistory.com/684>
 
 위의 블로그의 글들을 읽고 정리한 내용이다.    
-<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/fa72be6c-56e1-4ebe-856b-a676c0043c84
-">
+<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/fa72be6c-56e1-4ebe-856b-a676c0043c84">
 
 밑에가 잘렸는데 key를 refresh token 값이 아닌 사용자를 판별할 수 있는 정보로 두면 정상 사용자도 재발급이 가능하다는 얘기이다.    
 
