@@ -1,5 +1,5 @@
 ---
-title: List, ArrayList, LinkedList(가볍게)
+title: List, ArrayList, LinkedList
 layout: post
 categories: coding
 tags: theory
