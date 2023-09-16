@@ -250,3 +250,10 @@ proxy_http_version 1.1;
 위와 같은 설정을 해주고 read_timeout 시간을 변경해줘도 어째서인지 우리 프로젝트에서는 고쳐지지 않아 안타깝게도 SSE는 사용할 수가 없었다.    
 
 결국 새로운 방식을 찾기 시작했고 단방향 통신을 이어가고 싶던 점에서 웹소켓이 아닌 주로 웹보다는 앱에서 쓰이는 FCM 방식을 채택했다.
+
+[참고]    
+- <https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseBodyEmitter.html#onCompletion(java.lang.Runnable)>    
+- <https://taemham.github.io/posts/Implementing_Notification/>    
+- <https://tecoble.techcourse.co.kr/post/2022-10-11-server-sent-events/>    
+- <https://gong-check.github.io/dev-blog/BE/%EC%96%B4%EC%8D%B8%EC%98%A4/sse/sse/>    
+- https://sothoughtful.dev/posts/sse/
