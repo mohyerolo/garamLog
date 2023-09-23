@@ -113,6 +113,7 @@ __@EnablWebSecurity__: 이게 있어야 security가 활성화된다.
 auth 관련과 login은 인증이 없어도 접근이 가능해야 하므로 이것들은 허용하고 나머지는 인증 절차를 거쳐야한다는 설정을 해주겠다.    
 
 - deprecated 이전    
+
 ```java
 @Bean
 public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -124,6 +125,7 @@ public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Excepti
 ```
 
 - deprecated 이후    
+
 ```java
 private static final String[] PERMIT_ALL_PATTERNS = new String[]{
         "/auth/sign-up",
@@ -143,6 +145,7 @@ public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Excepti
 ```    
 
 JWT를 사용할것이므로 이와 관련된 http 설정을 해준다.    
+
 ```java
 @Bean
 public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
