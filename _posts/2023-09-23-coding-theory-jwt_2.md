@@ -1,6 +1,11 @@
-## Spring Boot + JWT + Redis + OAuth2를 이용한 회원가입, 로그인 구현 (2) - Spring Security 및 기본 설정
+---
+title: Spring Boot + JWT + Redis + OAuth2를 이용한 회원가입, 로그인 구현 (2) - Spring Security 및 기본 설정
+layout: post
+categories: coding
+tags: theory
+---
 
-프로젝트 세팅
+### 프로젝트 세팅
 이 프로젝트에 사용될 것들을 gradle에 설정하고 application.yml에도 server와 db 설정을 해주었다.
 mysql, postgresql은 사용해봤는데 mariadb를 사용해본 적이 없어서 이번에 사용해보기로 했다.    
 jsp로 페이지를 만들거라 따로 jsp 설정이 들어갔다.    
