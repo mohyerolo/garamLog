@@ -123,7 +123,7 @@ public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Excepti
 }
 ```
 
-- deprecated 이후
+- deprecated 이후    
 ```java
 private static final String[] PERMIT_ALL_PATTERNS = new String[]{
         "/auth/sign-up",
@@ -140,7 +140,7 @@ public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Excepti
                             .toArray(AntPathRequestMatcher[]::new)).permitAll()
                     .anyRequest().authenticated())
 }
-```
+```    
 
 JWT를 사용할것이므로 이와 관련된 http 설정을 해준다.    
 ```java
@@ -162,6 +162,7 @@ public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Excepti
 
 }
 ```    
+
 * csrf(AbstractHttpConfigurer::disable): csrf는 html tag를 통한 공격으로 일반적으로 사용자가 요청하는 모든 것에 csrf 보호를 사용하는 것이 좋지만 
 현재는 클라이언트 서비스만을 만들기때문에 비활성화 시켜야된다. API를 작성하는데 프런트가 정해져있지 않기 때문
 * httpBasic(AbstractHttpConfigurer::disable): 사용자 인증방법으로 HTTP Basic Authentication을 사용하지 않을 것이다. (JWT는 Bearer 방식을 사용하기 때문)
