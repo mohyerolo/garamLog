@@ -2,7 +2,7 @@
 title: Spring Boot + JWT + Redis + OAuth2를 이용한 회원가입, 로그인 구현 (3) - 회원가입, 로그인
 layout: post
 categories: coding
-tags: theory
+tags: spring
 ---
 
 대망의 회원가입과 로그인 작업

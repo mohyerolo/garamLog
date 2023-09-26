@@ -2,7 +2,7 @@
 title: Spring Boot + JWT + Redis + OAuth2를 이용한 회원가입, 로그인 구현 (1) - Spring Security
 layout: post
 categories: coding
-tags: theory
+tags: spring
 ---
 
 스프링에서는 가장 중요한 보안을 Spring Security를 이용해 처리한다.

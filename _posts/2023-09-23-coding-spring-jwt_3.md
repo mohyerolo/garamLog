@@ -2,7 +2,7 @@
 title: Spring Boot + JWT + Redis + OAuth2를 이용한 회원가입, 로그인 구현 (3) - filter
 layout: post
 categories: coding
-tags: theory
+tags: spring
 ---
 
 ## OncePerRequestFilter
