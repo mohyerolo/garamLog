@@ -1,5 +1,5 @@
 ---
-title: [자바 디자인 패턴의 이해] 1강 - Strategy Pattern
+title: "[자바 디자인 패턴의 이해] 1강 - Strategy Pattern"
 layout: post
 categories: coding
 tags: theory
