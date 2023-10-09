@@ -20,34 +20,40 @@ JwtFilter는 내가 만든 필터로 OncePerRequestFilter를 상속한다.
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtProvider jwtProvider;
-    private final RedisTemplate<String, Object> redisTemplate;
 
     private static final String[] SHOULD_NOT_FILTER_URI_LIST = new String[]{
-            "/auth/sign-up",
-            "/auth/login"
+            "/",
+            "/auth/**",
+            "/WEB-INF/views/**",
+            "/css/**",
+            "/images/**",
+            "/favicon.ico"
     };
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-        return Stream.of(SHOULD_NOT_FILTER_URI_LIST).anyMatch(request.getRequestURI()::startsWith);
+        return Arrays.stream(SHOULD_NOT_FILTER_URI_LIST).anyMatch(e -> new AntPathMatcher().match(e, request.getServletPath()));
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = resolveToken(request);
 
-        if (StringUtils.hasText(token)) {
-            JwtCode jwtCode = jwtProvider.validateToken(token);
-            if (jwtCode.equals(JwtCode.ACCESS) && SecurityContextHolder.getContext().getAuthentication() == null) {
-                Authentication authentication = jwtProvider.getAuthentication(token);
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            } else if (jwtCode.equals(JwtCode.EXPIRED)) {
-                ...
+        try {
+            if (StringUtils.hasText(token)) {
+                JwtCode jwtCode = jwtProvider.validateToken(token);
+                if (jwtCode.equals(JwtCode.ACCESS)) {
+                    Authentication authentication = jwtProvider.getAuthentication(token);
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                } else if (jwtCode.equals(JwtCode.EXPIRED)) {
+                    ...
+                }
             }
+            filterChain.doFilter(request, response);
+        } catch (...) {
+            ...
         }
-
     }
-
 
     private String resolveToken(HttpServletRequest request) {
         return request.getHeader(HttpHeaders.AUTHORIZATION);

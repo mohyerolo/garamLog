@@ -286,17 +286,6 @@ public ResponseEntity<Void> login(LoginInfoDto dto) {
     HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.add("Authorization", tokenDto.getAccessToken());
 
-    ResponseCookie cookie = ResponseCookie.from("refreshToken", tokenDto.getRefreshTokenDto().getRefreshToken())
-            .maxAge(tokenDto.getRefreshTokenDto().getRefreshTokenExpiration())
-            .path("/")
-            // https 환경에서만 쿠키가 발동
-            .secure(true)
-            // 동일 사이트과 크로스 사이트에 모두 쿠키 전송이 가능
-            .sameSite("None")
-            // 브라우저에서 쿠키에 접근할 수 없도록 제한
-            .httpOnly(true)
-            .build();
-    httpHeaders.add(HttpHeaders.SET_COOKIE, cookie.toString());
     return ResponseEntity.ok().headers(httpHeaders).build();
 }
 ```    
@@ -304,18 +293,6 @@ public ResponseEntity<Void> login(LoginInfoDto dto) {
 <hr>
 모든 작업을 마치고 나면 아래와 같은 결과를 얻는다.     
 
-
-<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/22894c5e-faac-4f02-9afb-b5a55db7e658">
-
-<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/4298f20b-44c5-423a-a6c3-bdc43b4b2637">    
-
-
-<hr>
-
-<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/7ff592ef-5484-4cce-9167-0c4b381f4ba4" width="60%">
-
-<img src="https://github.com/mohyerolo/mohyerolo.github.io/assets/68698007/8515fed8-5547-4e56-816f-808d69faaefc">
-
-헤더와 쿠키에도 잘 들어가 있는 걸 확인할 수 있다.    
+<img src="https://github.com/team-web-development-projects/developer-talks-backend/assets/68698007/8f40c1dc-57a9-4e4b-a5f3-e4cb7b76ab19">
 
 그러나 그 전에 위와 같은 작업을 아무런 설정 없이 실행하면 401 에러가 발생한다. 이를 해결하기 위해 SecurityConfig 설정을 해줘야 된다.    
